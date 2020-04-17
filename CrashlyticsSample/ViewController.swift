@@ -15,7 +15,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        _ = [0, 1][2]
     }
-
+    
+    @IBAction func buttonTapped() {
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-001",
+            AnalyticsParameterItemName: "登録ボタン",
+            AnalyticsParameterContentType: "コンテンツタイプ"
+        ])
+    }
+    
+    @IBAction func buttonTapped2() {
+        Analytics.logEvent("share_image", parameters: [
+            "name": "シェア" as NSObject,
+            "full_text": "シェア" as NSObject
+        ])
+    }
 
 }
 
