@@ -39,6 +39,9 @@ class ViewController: UIViewController {
     
     @IBAction func crashButtonTapped(_ sender: AnyObject) {
         _ = [0, 1][2]
+        Crashlytics.setValue("crashButton_tapped", forKey: "crashButton_tapped_action")
+        Crashlytics.crashlytics().log("crashButton_tappedで落ちました")
+        Crashlytics.crashlytics().setUserID("1234")
     }
 
 }
