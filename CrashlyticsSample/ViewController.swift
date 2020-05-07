@@ -13,7 +13,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        _ = [0, 1][2]
+        // クラッシュボタン
+        let button = UIButton(type: .roundedRect)
+        button.frame = CGRect(x: 20, y: 50, width: 100, height: 30)
+        button.backgroundColor = .red
+        button.setTitle("Crash", for: [])
+        button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
+        view.addSubview(button)
     }
     
     @IBAction func buttonTapped() {
@@ -29,6 +35,10 @@ class ViewController: UIViewController {
             "name": "シェア" as NSObject,
             "full_text": "シェア" as NSObject
         ])
+    }
+    
+    @IBAction func crashButtonTapped(_ sender: AnyObject) {
+        _ = [0, 1][2]
     }
 
 }
