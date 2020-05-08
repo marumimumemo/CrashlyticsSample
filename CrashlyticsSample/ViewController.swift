@@ -45,10 +45,11 @@ class ViewController: UIViewController {
     
     @IBAction func crashButtonTapped(_ sender: AnyObject) {
         // 強制的にクラッシュ
-        _ = [0, 1][2]
+        fatalError()
     }
     
     func setCrashlyticsLogs() {
+        Crashlytics.crashlytics().log("クラッシュしました")
         crashLog.setCrashID(id: "1")
         crashLog.setCrashUdid(udid: "2")
         crashLog.setCrashAppVer(appVer: "ver1.1")
