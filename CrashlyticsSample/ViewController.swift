@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    
+    let crashLog = CrashlyticsLog()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +22,12 @@ class ViewController: UIViewController {
         button.setTitle("Crash", for: [])
         button.addTarget(self, action: #selector(self.crashButtonTapped(_:)), for: .touchUpInside)
         view.addSubview(button)
+        
+        setCrashlyticsLogs()
     }
     
     @IBAction func buttonTapped() {
+        // イベントログ(セレクトコンテンツ)
         Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
             AnalyticsParameterItemID: "id-001",
             AnalyticsParameterItemName: "登録ボタン",
@@ -31,6 +36,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTapped2() {
+        // イベントログ(汎用)
         Analytics.logEvent("share_image", parameters: [
             "name": "シェア" as NSObject,
             "full_text": "シェア" as NSObject
@@ -38,10 +44,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func crashButtonTapped(_ sender: AnyObject) {
+        // 強制的にクラッシュ
         _ = [0, 1][2]
-        Crashlytics.setValue("crashButton_tapped", forKey: "crashButton_tapped_action")
-        Crashlytics.crashlytics().log("crashButton_tappedで落ちました")
-        Crashlytics.crashlytics().setUserID("1234")
+    }
+    
+    func setCrashlyticsLogs() {
+        crashLog.setCrashID(id: "1")
+        crashLog.setCrashUdid(udid: "2")
+        crashLog.setCrashAppVer(appVer: "ver1.1")
+        crashLog.setCrashClassName(className: String(describing: type(of: self)))
+        crashLog.setCrashIsLogin(isLogin: true)
     }
 
 }

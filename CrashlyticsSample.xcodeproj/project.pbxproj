@@ -26,6 +26,7 @@
 		A60E3C0624444AE40031B3FF /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60E3C0524444AE40031B3FF /* nanopb.framework */; };
 		A60E3C0924444AEF0031B3FF /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60E3C0824444AEF0031B3FF /* PromisesObjC.framework */; };
 		A60E3C0C24444B550031B3FF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A60E3C0B24444B550031B3FF /* GoogleService-Info.plist */; };
+		A645C7782464EF4500BA3890 /* CrashlyticsLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A645C7772464EF4500BA3890 /* CrashlyticsLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		A60E3C0524444AE40031B3FF /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
 		A60E3C0824444AEF0031B3FF /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
 		A60E3C0B24444B550031B3FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A645C7772464EF4500BA3890 /* CrashlyticsLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				A60E3BCE244449620031B3FF /* AppDelegate.swift */,
 				A60E3BD0244449620031B3FF /* SceneDelegate.swift */,
 				A60E3BD2244449620031B3FF /* ViewController.swift */,
+				A645C7772464EF4500BA3890 /* CrashlyticsLog.swift */,
 				A60E3BD4244449620031B3FF /* Main.storyboard */,
 				A60E3BD7244449620031B3FF /* Assets.xcassets */,
 				A60E3BD9244449620031B3FF /* LaunchScreen.storyboard */,
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60E3BD3244449620031B3FF /* ViewController.swift in Sources */,
+				A645C7782464EF4500BA3890 /* CrashlyticsLog.swift in Sources */,
 				A60E3BCF244449620031B3FF /* AppDelegate.swift in Sources */,
 				A60E3BD1244449620031B3FF /* SceneDelegate.swift in Sources */,
 			);
