@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     }
     
     func setCrashlyticsLogs() {
-        Crashlytics.crashlytics().log("クラッシュしました")
+        crashLog.setCrashLog(log: "クラッシュ")
         crashLog.setCrashID(id: "1")
         crashLog.setCrashUdid(udid: "2")
         crashLog.setCrashAppVer(appVer: "ver1.1")

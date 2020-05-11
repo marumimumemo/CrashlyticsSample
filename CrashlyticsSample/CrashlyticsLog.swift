@@ -11,21 +11,34 @@ import Firebase
 
 class CrashlyticsLog {
     
+    // 任意のID
     func setCrashUserID() {
         Crashlytics.crashlytics().setUserID("ユーザID")
     }
     
+    // ログ
+    func setCrashLog(log: String) {
+        Crashlytics.crashlytics().log(log)
+    }
+    
+    // String
     func setCrashStringValue(forKey: String, value: String) {
         Crashlytics.crashlytics().setCustomValue(value, forKey: forKey)
     }
     
+    // Int
     func setCrashIntValue(forKey: String, value: Int) {
         Crashlytics.crashlytics().setCustomValue(value, forKey: forKey)
     }
     
+    // Bool
     func setCrashBoolValue(forKey: String, value: Bool) {
         Crashlytics.crashlytics().setCustomValue(true, forKey: forKey)
     }
+    
+    
+    // 例
+    
     
     // クラッシュしたID
     func setCrashID(id: String) {
